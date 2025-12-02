@@ -1,5 +1,6 @@
 # Writeup for AlpacaHack 2100
-<img width="920" height="365" alt="image" src="https://gist.github.com/user-attachments/assets/80052254-7e2e-4e9c-b07c-1c1123478038" />
+<img width="1840" height="730" alt="image" src="https://github.com/user-attachments/assets/473f7813-ed5e-45fe-9bc8-357a3cfab4fd" />
+
 
 問題文には、
 ```
@@ -9,7 +10,8 @@
 
 Daily AlpacaHack のカレンダーは「次の月」ボタンを押せば、次の月に進めます。
 
-<img width="304" height="64" alt="image" src="https://gist.github.com/user-attachments/assets/4c062191-62df-42cc-a854-2149cfd7b5ba" />
+<img width="304" height="64" alt="image" src="https://github.com/user-attachments/assets/0ce5aa5f-6cd2-4262-a37d-ac8d6d33f427" />
+
 
 単純にこのボタンを約75年分、つまり900回くらい押し続けていけばひとまずは解けそうですが、何かしらの病気になりそうです。
 
@@ -24,7 +26,8 @@ Daily AlpacaHack のカレンダーは「次の月」ボタンを押せば、次
 
 実際飛んでみると、2100年1月のカレンダーが表示され、11日から17日にフラグが細切れに配置されていました。
 
-<img width="1197" height="1073" alt="image" src="https://gist.github.com/user-attachments/assets/0d293e4c-d149-4a54-b2fe-229031e29506" />
+<img width="1197" height="1073" alt="image" src="https://github.com/user-attachments/assets/a7aaecf9-dd27-4b18-8263-09d7757a2abb" />
+
 
 これらを結合するとフラグです。これで健康的に解けました。
 
