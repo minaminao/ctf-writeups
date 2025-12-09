@@ -3,7 +3,7 @@
 ## 概要
 https://alpacahack.com/daily/challenges/leaked-flag-checker
 
-バイナリ `challenge` とそのソースコード `challenge.c` が与えられる。
+バイナリ `challenge` とそのソースコード `challenge.c` が与えられます。
 
 `challenge.c`:
 ```c
@@ -35,14 +35,14 @@ int main(void) {
 }
 ```
 
-ただし、ソースコード上は `xor_flag` は `REDACTED` になっており隠されている。
+ただし、ソースコード上は `xor_flag` は `REDACTED` になっており隠されています。
 
-ソースコードを読むと、ユーザーの入力が `input` に格納され、プログラムは以下の処理を行う:
+ソースコードを読むと、ユーザーの入力が `input` に格納され、プログラムは以下の処理を行います:
 1. 文字列長を比較。
 2. 各文字を `7` で XOR して比較。間違えたインデックスの場所を出力。
 
 
-また、バイナリを `file` コマンドにかけた結果は以下:
+また、バイナリを `file` コマンドにかけた結果は以下です:
 ```
 $ file challenge
 challenge: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=5d2c86ed744df49647f3bd9cee8cfc4a90041315, for GNU/Linux 3.2.0, not stripped
@@ -50,15 +50,15 @@ challenge: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically 
 
 ## 解法1
 
-`REDACTED` の値がわかりさえすれば、その値に `7` を XOR するだけでフラグが求まるので、まずは `REDACTED` の値を取得することを目指す。
+`REDACTED` の値がわかりさえすれば、その値に `7` を XOR するだけでフラグが求まるので、まずは `REDACTED` の値を取得することを目指します。
 
-そのために Binary Ninja や Ghidra などのバイナリ解析ツールで `challenge` を読み込んでみる。
+そのために Binary Ninja や Ghidra などのバイナリ解析ツールで `challenge` を読み込んでみます。
 
-今回は Binary Ninja を使ってみると、`main` 関数は次のような結果になる:
+今回は Binary Ninja を使ってみると、`main` 関数は次のような結果になります:
 
 ![alt text](assets/image.png)
 
-この結果とソースコードと照らし合わせると `Fkwfdf|krdl~z` が怪しそうだ。
+この結果とソースコードと照らし合わせると `Fkwfdf|krdl~z` が怪しそうです。
 
 Python で逆算してみると、
 
@@ -68,17 +68,17 @@ $ python
 'Alpaca{lucky}'
 ```
 
-フラグが求まった。
+フラグが求まりました。
 
 Flag: `Alpaca{lucky}`
 
 ## 解法2
 
-バイナリ解析ツールを使わなくても、この問題は解くことができる。
+バイナリ解析ツールを使わなくても、この問題は解くことができます。
 
-バイナリの出力結果からフラグを特定していけるからだ。
+バイナリの出力結果からフラグを特定していけるからです。
 
-まず、フラグ長を絞る。適当にフラグの長さを伸ばしていくと、
+まず、フラグ長を絞ります。適当にフラグの長さを伸ばしていくと、
 
 ```
 $ ./challenge 
@@ -90,11 +90,11 @@ Enter flag: Alpaca{AAAAA}
 Wrong at index 7
 ```
 
-このようになり、フラグの長さが13文字だとわかる。
+このようになり、フラグの長さが13文字だとわかります。
 
-次に、括弧内の文字を特定していく。
+次に、括弧内の文字を特定していきます。
 
-間違っているインデックスを出力してくれるので、それをもとに一文字ずつ特定するPythonスクリプトを書けばいい:
+間違っているインデックスを出力してくれるので、それをもとに一文字ずつ特定するPythonスクリプトを書けばよいです:
 
 ```python
 import subprocess
@@ -149,4 +149,4 @@ check: Alpaca{lucky}
 found flag: Alpaca{lucky}
 ```
 
-となり、フラグが求まる。
+となり、フラグが求まります。
