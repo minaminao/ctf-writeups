@@ -102,3 +102,7 @@ Alpaca{nkosopa_life_is_beautiful}
 Flag: `Alpaca{nkosopa_life_is_beautiful}`
 
 他の解法パターンがあればぜひWriteupを投稿してください！
+
+**追記**: 他にも色々解法がありました！
+- [f-string を利用した解法 by rsk0315さん](https://rsk0315.hatenablog.com/entry/2026/01/07/013304)
+- [''' を利用した解法 by tchenさん](https://x.com/tepelchen501/status/2008809276383560150)
