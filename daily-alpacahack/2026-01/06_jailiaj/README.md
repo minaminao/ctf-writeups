@@ -2,7 +2,7 @@
 
 Daily AlpacaHack で 1/6 に出題した『jailiaj』の作問者 Writeup (解法2つ) です。
 
-https://alpacahack.com/daily/challenges/cat3
+https://alpacahack.com/daily/challenges/jailiaj
 
 ## 問題概要
 
